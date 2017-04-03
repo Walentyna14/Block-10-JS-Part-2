@@ -1,66 +1,18 @@
 var main = function(){
 	
 	var fraza = function(){
-		var number = 1 + Math.floor(Math.random() * 6);
-			switch(number) {
-				case 1:
-					var name = "Robot";
-					break;
-				case 2:
-					var name = "Janek";
-					break;
-				case 3:
-					var name = "Mikołaj";
-					break;
-				case 4:
-					var name = "Ryszard";
-					break;
-				case 5:
-					var name = "Maciej";
-					break;
-				case 6:
-					var name = "Kuba";
-					break;
-			}
-			return "Cześć jestem "+name+".";
+		var name = ['Robot','Janek','Mikołaj', 'Ryszard','Maciej','Kuba'];
+		var number = 1 + Math.floor(Math.random() * name.length);
+		$('<li class="ans">').text("Cześć jestem "+name[number]+", napisz do mnie :)").prependTo('#chat-window');
+		console.log(number)
 	};
 	
-	var fraza1 = function(){
-		var number = 1 + Math.floor(Math.random() * 6);
-			switch(number) {
-				case 1:
-					return "Lubię placki.";
-					break;
-				case 2:
-					return "Bardzo ładny niebieski.";
-					break;
-				case 3:
-					return "Powtórzysz? Nie zrozumiałem...";
-					break;
-				case 4:
-					return "Lubię Cię.";
-					break;
-				case 5:
-					return " :)";
-					break;
-				case 6:
-					return "Lubisz mnie?";
-					break;
-			}
-			
+	var ans = function(){
+		var odp = ['Lubię placki.', 'Bardzo ładny niebieski.',  'Powtórzysz? Nie zrozumiałem...', 'Lubię Cię.', ' :)', 'Lubisz mnie?'];
+		var number_o = 1 + Math.floor(Math.random() * odp.length);
+		$('<li class="ans">').text(odp[number_o]).prependTo('#chat-window');		
 	};
 	
-	var licznik = 1;
-	var odp = function(){
-		if (licznik ==1)
-		{
-			licznik+=1;
-			$('<li class="ans">').text(fraza()).prependTo('#chat-window');
-		}
-		else 
-			$('<li class="ans">').text(fraza1()).prependTo('#chat-window');
-		
-	};
 	
 	$('button').click(function() {
 		var post = $('.chat').val();
@@ -68,7 +20,7 @@ var main = function(){
 		$('.chat').val('');
 		$('.counter').text('200');
 		$('button').addClass('disabled'); 
-		odp();
+		ans();
 	});
 
 	$('.chat').keyup(function() {
@@ -87,6 +39,7 @@ var main = function(){
 	});
 
 	$('button').addClass('disabled');
+	fraza();
 }
 
 $(document).ready(main);

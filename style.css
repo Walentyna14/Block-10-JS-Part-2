@@ -57,13 +57,10 @@ h2
 form
 {
 	text-align: center;
+	width: 200px;
+	width: 100%;
 }
 
-#formul
-{
-width: 200px;
-width: 100%;
-}
 textarea
 {
 	width: 75%;
@@ -94,8 +91,11 @@ button
 
 #button-post
 {
-	padding-right: 5%;
-	padding-left: 80%;
+	
+	width:150px;
+	position: relative;
+	right: 130px;
+	margin-left: auto;
 }
 .counter
 {
@@ -104,7 +104,7 @@ button
 	font-size: 15px;
 }
 
-ul
+ol
 {
 	list-style-type: none;
 	margin: auto;
@@ -112,7 +112,7 @@ ul
 	display: block;
 }
 
-ul >li
+ol >li
 {
 	word-wrap: break-word;
 	width: 40%;
