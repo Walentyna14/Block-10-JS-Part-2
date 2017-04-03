@@ -64,8 +64,10 @@ form
 textarea
 {
 	width: 80%;
+	max-width: 90%;
+	height: 55px;
 	margin: auto;
-	padding-bottom: 30px;
+	
 }
 button
 {
@@ -91,7 +93,7 @@ button
 
 #button-post
 {
-	margin-left: 60%;
+	text-align: right;
 }
 .counter
 {
