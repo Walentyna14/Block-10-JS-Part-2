@@ -1,18 +1,15 @@
 var main = function(){
 	
+	odp = ['Lubię placki.', 'Bardzo ładny niebieski.',  'Powtórzysz? Nie zrozumiałem...', 'Lubię Cię.', ' :)', 'Lubisz mnie?'];
+	
 	var fraza = function(){
 		var name = ['Robot','Janek','Mikołaj', 'Ryszard','Maciej','Kuba'];
-		var number = 1 + Math.floor(Math.random() * name.length);
-		$('<li class="ans">').text("Cześć jestem "+name[number]+", napisz do mnie :)").prependTo('#chat-window');
-		console.log(number)
+		$('<li class="ans">').text("Cześć jestem "+(name[number(name)])+", napisz do mnie :)").prependTo('#chat-window');
 	};
 	
-	var ans = function(){
-		var odp = ['Lubię placki.', 'Bardzo ładny niebieski.',  'Powtórzysz? Nie zrozumiałem...', 'Lubię Cię.', ' :)', 'Lubisz mnie?'];
-		var number_o = 1 + Math.floor(Math.random() * odp.length);
-		$('<li class="ans">').text(odp[number_o]).prependTo('#chat-window');		
+	var number = function(array){
+		return (Math.floor(Math.random() * array.length));
 	};
-	
 	
 	$('button').click(function() {
 		var post = $('.chat').val();
@@ -20,7 +17,7 @@ var main = function(){
 		$('.chat').val('');
 		$('.counter').text('200');
 		$('button').addClass('disabled'); 
-		ans();
+		$('<li class="ans">').text(odp[number(odp)]).prependTo('#chat-window');
 	});
 
 	$('.chat').keyup(function() {
