@@ -11,11 +11,11 @@ odp = ['Lubię placki.', 'Bardzo ładny niebieski.', 'Powtórzysz? Nie zrozumia�
 
 var hello = function(){
 	var name = ['Robot','Janek','Mikołaj', 'Ryszard','Maciej','Kuba'];
-	$('<li class="ans">').text("Cześć jestem "+(name[number(name)])+", napisz do mnie :)").prependTo('#chat-window');
+	$('<li class="ans">').text("Cześć jestem "+(name[number(0, name.length)])+", napisz do mnie :)").prependTo('#chat-window');
 };
 
-var number = function(array){
-	return (Math.floor(Math.random() * array.length));
+var number = function(min , max){
+	return (min + Math.floor(Math.random() * max));
 };
 	
 var buttonClickHandler = function() {
@@ -24,7 +24,7 @@ var buttonClickHandler = function() {
 	$('.chat').val('');
 	$('.counter').text('200');
 	$('button').addClass('disabled'); 
-	$('<li class="ans">').text(odp[number(odp)]).prependTo('#chat-window');
+	$('<li class="ans">').text(odp[number(0, odp.length)]).prependTo('#chat-window');
 }
 
 var chatKeyupHandler = function() {
